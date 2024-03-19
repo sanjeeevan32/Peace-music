@@ -2,7 +2,7 @@ console.log("Welcome to Spotify");
 
 // Initialize the Variables
 let songIndex = 0;
-let audioElement = new Audio('a.mp3');
+let audioElement = new Audio('songs/1.mp3');
 let masterPlay = document.getElementById('masterPlay');
 let myProgressBar = document.getElementById('myProgressBar');
 let gif = document.getElementById('gif');
@@ -10,16 +10,16 @@ let masterSongName = document.getElementById('masterSongName');
 let songItems = Array.from(document.getElementsByClassName('songItem'));
 
 let songs = [
-    {songName: "MANN BEHKEGA", filePath:"1.mp3", coverPath: "12.jpg"},
-    {songName: "KESARIYAA TERA", filePath: "2.mp3", coverPath: "12.jpg"},
-    {songName: "TERA NAAM DHOKA RAKHDU", filePath: "3.mp3", coverPath: "12.jpg"},
-    {songName: "AE DIL HA MUSHKIL", filePath: "4.mp3", coverPath: "12.jpg"},
-    {songName: "DHOKA DHARI", filePath: "5.mp3", coverPath: "12.jpg"},
-    {songName: "HAWAYEIN", filePath: "6.mp3", coverPath: "12.jpg"},
-    {songName: "CHAHU MAIN YA NA", filePath: "7.mp3", coverPath: "12.jpg"},
-    {songName: "LO MAAN LIYA", filePath: "8.mp3", coverPath: "12.jpg"},
-    {songName: "HAR KISI KO", filePath: "9.mp3", coverPath: "12.jpg"},
-    {songName: "CHAL VE TU BANDAYA", filePath: "10.mp3", coverPath: "12.jpg"},
+    {songName: "MANN BEHKEGA", filePath:"songs/1.mp3", coverPath: "images/12.jpg"},
+    {songName: "KESARIYAA TERA", filePath: "songs/2.mp3", coverPath: "images/12.jpg"},
+    {songName: "TERA NAAM DHOKA RAKHDU", filePath: "songs/3.mp3", coverPath: "images/12.jpg"},
+    {songName: "AE DIL HA MUSHKIL", filePath: "songs/4.mp3", coverPath: "images/12.jpg"},
+    {songName: "DHOKA DHARI", filePath: "songs/5.mp3", coverPath: "images/12.jpg"},
+    {songName: "HAWAYEIN", filePath: "songs/6.mp3", coverPath: "images/12.jpg"},
+    {songName: "CHAHU MAIN YA NA", filePath: "songs/7.mp3", coverPath: "images/12.jpg"},
+    {songName: "LO MAAN LIYA", filePath: "songs/8.mp3", coverPath: "images/12.jpg"},
+    {songName: "HAR KISI KO", filePath: "songs/9.mp3", coverPath: "images/12.jpg"},
+    {songName: "CHAL VE TU BANDAYA", filePath: "songs/10.mp3", coverPath: "images/12.jpg"},
 ]
 
 songItems.forEach((element, i)=>{ 
@@ -68,7 +68,7 @@ Array.from(document.getElementsByClassName('songItemPlay')).forEach((element)=>{
         songIndex = parseInt(e.target.id);
         e.target.classList.remove('fa-play-circle');
         e.target.classList.add('fa-pause-circle');
-        audioElement.src = `/${songIndex+1}.mp3`;
+        audioElement.src = `songs/${songIndex+1}.mp3`;
         masterSongName.innerText = songs[songIndex].songName;
         audioElement.currentTime = 0;
         audioElement.play();
@@ -85,7 +85,7 @@ document.getElementById('next').addEventListener('click', ()=>{
     else{
         songIndex += 1;
     }
-    audioElement.src = `${songIndex+1}.mp3`;
+    audioElement.src = `songs/${songIndex+1}.mp3`;
     masterSongName.innerText = songs[songIndex].songName;
     audioElement.currentTime = 0;
     audioElement.play();
@@ -101,7 +101,7 @@ document.getElementById('previous').addEventListener('click', ()=>{
     else{
         songIndex -= 1;
     }
-    audioElement.src = `${songIndex+1}.mp3`;
+    audioElement.src = `songs/${songIndex+1}.mp3`;
     masterSongName.innerText = songs[songIndex].songName;
     audioElement.currentTime = 0;
     audioElement.play();
